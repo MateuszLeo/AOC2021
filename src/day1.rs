@@ -1,8 +1,7 @@
 use std::fs;
-use std::path::Iter;
 
 #[derive(Debug)]
-struct Result {
+struct MyResult {
     value: i64,
     flag: Option<bool>,
 }
@@ -27,24 +26,25 @@ pub fn run() {
     );
 }
 
-fn first(iter: &Vec<i64>) -> Vec<Result> {
+fn first(iter: &Vec<i64>) -> Vec<MyResult> {
     let mut previous: i64 = 0;
-    let mut result_vec: Vec<Result> = vec![];
+    let mut result_vec: Vec<MyResult> = vec![];
+
     for &value in iter.into_iter().skip(1) {
         if previous < value {
-            result_vec.push(Result {
+            result_vec.push(MyResult {
                 flag: Some(true),
                 value,
             })
         } else {
-            result_vec.push(Result { flag: None, value })
+            result_vec.push(MyResult { flag: None, value })
         }
         previous = value
     }
     return result_vec;
 }
 
-fn second(vec: &Vec<i64>) -> Vec<Result> {
+fn second(vec: &Vec<i64>) -> Vec<MyResult> {
     let mut result_vec: Vec<&[i64]> = vec![];
     let mut start = 0;
     let mut end = 3;
