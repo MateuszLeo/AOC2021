@@ -59,7 +59,7 @@ fn reduce_matrix(matrix: &Vec<Vec<u32>>, get_greater_number: bool) -> String {
     }
 }
 
-fn transpose(matrix: &Vec<Vec<u32>>) -> Vec<Vec<u32>> {
+pub fn transpose(matrix: &Vec<Vec<u32>>) -> Vec<Vec<u32>> {
     let mut transposed_matrix: Vec<Vec<u32>> = vec![];
     for row in matrix.into_iter() {
         for (j, x) in row.into_iter().enumerate() {
