@@ -1,7 +1,5 @@
 use std::cmp::{max, min};
 use std::collections::HashMap;
-use std::fmt::format;
-use std::fs;
 
 struct FissureMap {
     table: HashMap<String, u32>,
