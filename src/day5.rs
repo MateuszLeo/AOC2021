@@ -24,9 +24,7 @@ impl FissureMap {
 
 pub fn run() {
     println!("Running day5.rs");
-    let filename = "src/day5.test";
-    let lines = fs::read_to_string(filename).unwrap();
-    let segment = lines
+    let segment = include_str!("day5.input")
         .lines()
         .map(|line| {
             line.split(" -> ")
