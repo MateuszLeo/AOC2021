@@ -66,7 +66,7 @@ fn calculate(lantern_fish: &mut LanternFish, current_day: i32, count: u64) -> u6
     if next_spawn_day > DAYS {
         return count;
     }
-    lantern_fish.timer = 6;
+    lantern_fish.next();
     return calculate(
         lantern_fish,
         next_spawn_day,
